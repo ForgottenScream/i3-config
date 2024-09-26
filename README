@@ -1,0 +1,43 @@
+# i3config
+# i3 Configuration Setup
+This repository contains the configuration files for the i3 window manager on Arch Linux.
+## Applications to Install
+### System Utilities
+- `git` - Version control for managing configuration files.
+- `yay` - AUR helper for installing AUR packages.
+### Window Manager
+- `i3` - The i3 window manager itself.
+- `i3status` - Status bar information.
+- `picom` - Compositor for transparency and shadows.
+### Network and Connectivity
+- `networkmanager` - Manage network connections.
+- `network-manager-applet` - Applet for network management (nm-applet).
+### Terminal and Launchers
+- `st` - Simple terminal emulator.
+- `rofi` - Application launcher.
+### Applications
+- `firefox` - Web browser.
+- `signal-desktop` - Signal desktop application.
+- `vscodium` - Open-source version of Visual Studio Code (installed via yay).
+- `mpv` - Media player.
+- `keepassxc` - Password manager.
+- `volumeicon` - Volume control applet.
+- `feh` - Image viewer (for setting wallpapers).
+- `mullvad-vpn` - VPN client (installed via yay).
+### Brightness Control
+- `brightnessctl` - Utility for controlling screen brightness.
+## Installation Instructions
+Follow these steps to install the required packages:
+1. **Install Git and Yay**:
+   ```bash
+   sudo pacman -S git
+   cd ~
+   git clone https://aur.archlinux.org/yay.git
+   cd yay
+   makepkg -si
+   cd ..
+   rm -rf yay
+### Copy and paste install
+sudo pacman -S i3 i3status picom networkmanager network-manager-applet st rofi firefox signal-desktop mpv keepassxc volumeicon feh brightnessctl
+### Once yay is installed
+yay -S vscodium mullvad-vpn
