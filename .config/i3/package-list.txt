@@ -57,6 +57,7 @@ python-dbus           # D-Bus support for Python
 mullvad-vpn-bin       # Mullvad VPN client
 scrcpy                 # Screen mirroring application for Android
 minetest              # Game similar to Minecraft
+w3m                   #terminal browser
 
 ## Graphics
 # Graphics and rendering related packages.
