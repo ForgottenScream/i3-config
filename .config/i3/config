@@ -65,13 +65,16 @@ assign [class="Signal"] $ws3            # Signal in workspace 3
 assign [class="VSCodium"] $ws4           # VSCodium in workspace 4
 assign [class="mpv"] $ws5                # MPV media player in workspace 5
 
+# Reminder to check application class names using xprop after installation
+# Use `xprop` to check the class names for assigned applications.
+
 # Autostart programs
-exec --no-startup-id picom -b                # Compositor for transparency
-exec --no-startup-id nm-applet               # Network manager applet
-exec --no-startup-id feh --bg-scale /path/to/wallpaper.jpg  # Set wallpaper (replace with actual path)
-exec --no-startup-id volumeicon              # Volume control
-exec --no-startup-id keepassxc               # KeepassXC for password management
-exec --no-startup-id mullvad-vpn             # Mullvad VPN client
+exec_always --no-startup-id picom -b                # Compositor for transparency
+exec_always --no-startup-id nm-applet               # Network manager applet
+exec_always --no-startup-id feh --bg-scale /path/to/wallpaper.jpg  # Set wallpaper (replace with actual path)
+exec_always --no-startup-id volumeicon              # Volume control
+exec_always --no-startup-id keepassxc               # KeepassXC for password management
+exec_always --no-startup-id mullvad-vpn             # Mullvad VPN client
 
 # Brightness control using brightnessctl
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%    # Increase brightness
