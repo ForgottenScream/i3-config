@@ -1,0 +1,78 @@
+# Package List for Arch Linux Installation
+
+## Base System
+# Essential packages for the base system and development.
+base                  # Base system package
+base-devel            # Essential development tools (compilers, etc.)
+linux                 # Linux kernel
+linux-firmware        # Firmware for various devices
+intel-ucode          # Intel CPU microcode
+nvidia                # NVIDIA drivers
+nvidia-settings       # NVIDIA settings utility
+nvidia-utils          # Additional NVIDIA utilities
+xf86-video-amdgpu     # AMD GPU driver
+xf86-video-ati        # Legacy AMD/ATI driver
+xf86-video-nouveau    # Open-source NVIDIA driver
+xf86-video-vmware     # VMware driver
+
+## Utilities
+# General-purpose utilities and tools.
+android-file-transfer  # Tool to transfer files to/from Android devices
+bat                    # Improved `cat` command with syntax highlighting
+blueman                # Bluetooth manager
+bluez-utils            # Bluetooth utilities
+btop                   # Resource monitor
+dmenu                  # Dynamic menu for X
+feh                    # Image viewer and wallpaper setter
+galculator             # Calculator
+git                    # Version control system
+htop                   # Interactive process viewer
+man-db                 # Manual page database
+nano                   # Text editor
+ranger                 # Terminal file manager
+rofi                   # Application launcher
+signal-desktop         # Secure messaging app
+sl                     # Fun command (Steam Locomotive)
+tldr                   # Simplified man pages
+tmux                   # Terminal multiplexer
+ttyper                 # Type along in the terminal
+wget                   # Download utility
+wireless_tools         # Wireless tools for Linux
+
+## Network Management
+# Networking tools and utilities.
+networkmanager         # Network management daemon
+network-manager-applet # Applet for NetworkManager
+yay                    # AUR helper for package management
+
+## Development
+# Packages for development environments and tools.
+jdk-openjdk           # OpenJDK (Java Development Kit)
+openjdk-jre           # Java Runtime Environment
+maven                  # Dependency management and build tool for Java
+gradle                 # Build automation tool for Java projects
+python-dbus           # D-Bus support for Python
+
+## Multimedia
+# Packages related to media playback and streaming.
+mullvad-vpn-bin       # Mullvad VPN client
+scrcpy                 # Screen mirroring application for Android
+minetest              # Game similar to Minecraft
+
+## Graphics
+# Graphics and rendering related packages.
+intel-media-driver    # Intel media driver for hardware acceleration
+libpulse              # PulseAudio sound server library
+libva-intel-driver    # Intel VAAPI driver
+libva-mesa-driver     # Mesa VAAPI driver
+vulkan-intel         # Intel Vulkan driver
+vulkan-radeon        # Radeon Vulkan driver
+
+## Performance Tools
+# Tools for performance monitoring and tuning.
+nvtop                 # NVIDIA GPU monitoring tool
+smartmontools         # S.M.A.R.T. monitoring tools
+zram-generator        # ZRAM configuration generator
+
+## Password Management
+keepassxc              # Password manager for secure storage
