@@ -1,0 +1,74 @@
+# Set the mod key to Super
+set $mod Mod4
+
+# Launch terminal
+bindsym $mod+Return exec st
+
+# Launch application launcher
+bindsym $mod+d exec rofi -show drun
+
+# Define named workspaces
+set $ws1 "1: Terminal"
+set $ws2 "2: Browser"
+set $ws3 "3: Signal"
+set $ws4 "4: Code"
+set $ws5 "5: TV"
+
+# Workspace keybindings
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+# Window management (splitting)
+bindsym $mod+v split v
+bindsym $mod+h split h
+
+# Focus management
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# Resizing windows
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Autostart programs
+exec --no-startup-id picom -b                    # Compositor for transparency
+exec --no-startup-id nm-applet                   # Network manager applet
+exec --no-startup-id feh --bg-scale /path/to/wallpaper.jpg   # Set wallpaper (replace with actual path)
+exec --no-startup-id volumeicon                  # Volume control
+exec --no-startup-id keepassxc                   # KeepassXC for password management
+exec --no-startup-id mullvad-vpn                 # Mullvad VPN client
+
+# Assign applications to specific workspaces
+assign [class="st-256color"] $ws1              # Terminal in workspace 1
+assign [class="firefox"] $ws2                  # Firefox browser in workspace 2
+# Placeholder for Mullvad Browser in workspace 2 (you can adjust when installed)
+# assign [class="mullvad-browser"] $ws2        
+assign [class="Signal"] $ws3                   # Signal in workspace 3
+assign [class="VSCodium"] $ws4                 # VSCodium in workspace 4
+assign [class="mpv"] $ws5                      # MPV media player in workspace 5
+
+# Brightness control using brightnessctl
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%    # Increase brightness
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-  # Decrease brightness
+
+# Keybindings for launching applications
+bindsym $mod+s exec signal-desktop                 # Launch Signal
+bindsym $mod+f exec firefox                         # Launch Firefox
+# Placeholder for Mullvad Browser (will be adjusted once installed)
+# bindsym $mod+m exec mullvad-browser                # Launch Mullvad Browser
+
+# i3status configuration (replace with your actual config path)
+# You may want to create a .i3status.conf file in your home directory
+# And include it in your i3 config like this:
+# status_command i3status -c ~/.i3status.conf
