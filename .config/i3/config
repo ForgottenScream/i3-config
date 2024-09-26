@@ -1,4 +1,7 @@
-# Set the mod key to Super
+# i3 Configuration File
+# This configuration file is for the i3 window manager.
+
+# Set the mod key (Super key)
 set $mod Mod4
 
 # Launch terminal
@@ -41,34 +44,40 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Autostart programs
-exec --no-startup-id picom -b                    # Compositor for transparency
-exec --no-startup-id nm-applet                   # Network manager applet
-exec --no-startup-id feh --bg-scale /path/to/wallpaper.jpg   # Set wallpaper (replace with actual path)
-exec --no-startup-id volumeicon                  # Volume control
-exec --no-startup-id keepassxc                   # KeepassXC for password management
-exec --no-startup-id mullvad-vpn                 # Mullvad VPN client
+# Keybindings for launching applications
+bindsym $mod+s exec signal-desktop  # Launch Signal
+bindsym $mod+f exec firefox          # Launch Firefox
+# Placeholder for Mullvad Browser (will be adjusted once installed)
+# bindsym $mod+m exec mullvad-browser  # Launch Mullvad Browser (to be installed)
+
+# Keybindings for switching workspaces
+bindsym $mod+Tab workspace next  # Go to the next workspace with Super + Tab
+bindsym $mod+Shift+Tab workspace prev  # Go to the previous workspace with Super + Shift + Tab
+bindsym Mod1+Tab workspace next  # Go to the next workspace with Alt + Tab
+bindsym Mod1+Shift+Tab workspace prev  # Go to the previous workspace with Alt + Shift + Tab
 
 # Assign applications to specific workspaces
-assign [class="st-256color"] $ws1              # Terminal in workspace 1
-assign [class="firefox"] $ws2                  # Firefox browser in workspace 2
+assign [class="st"] $ws1                # Terminal in workspace 1
+assign [class="firefox"] $ws2            # Firefox browser in workspace 2
 # Placeholder for Mullvad Browser in workspace 2 (you can adjust when installed)
-# assign [class="mullvad-browser"] $ws2        
-assign [class="Signal"] $ws3                   # Signal in workspace 3
-assign [class="VSCodium"] $ws4                 # VSCodium in workspace 4
-assign [class="mpv"] $ws5                      # MPV media player in workspace 5
+# assign [class="mullvad-browser"] $ws2 
+assign [class="Signal"] $ws3            # Signal in workspace 3
+assign [class="VSCodium"] $ws4           # VSCodium in workspace 4
+assign [class="mpv"] $ws5                # MPV media player in workspace 5
+
+# Autostart programs
+exec --no-startup-id picom -b                # Compositor for transparency
+exec --no-startup-id nm-applet               # Network manager applet
+exec --no-startup-id feh --bg-scale /path/to/wallpaper.jpg  # Set wallpaper (replace with actual path)
+exec --no-startup-id volumeicon              # Volume control
+exec --no-startup-id keepassxc               # KeepassXC for password management
+exec --no-startup-id mullvad-vpn             # Mullvad VPN client
 
 # Brightness control using brightnessctl
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%    # Increase brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-  # Decrease brightness
 
-# Keybindings for launching applications
-bindsym $mod+s exec signal-desktop                 # Launch Signal
-bindsym $mod+f exec firefox                         # Launch Firefox
-# Placeholder for Mullvad Browser (will be adjusted once installed)
-# bindsym $mod+m exec mullvad-browser                # Launch Mullvad Browser
-
-# i3status configuration (replace with your actual config path)
-# You may want to create a .i3status.conf file in your home directory
-# And include it in your i3 config like this:
-# status_command i3status -c ~/.i3status.conf
+# Bar settings
+bar {
+    status_command i3status -c ~/.config/i3/status.conf
+}
