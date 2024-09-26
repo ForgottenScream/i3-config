@@ -15,6 +15,7 @@ This repository contains the configuration files for the i3 window manager on Ar
 ### Terminal and Launchers
 - `st` - Simple terminal emulator.
 - `rofi` - Application launcher.
+- 'thunar' - File manager
 ### Applications
 - `firefox` - Web browser.
 - `signal-desktop` - Signal desktop application.
@@ -38,6 +39,6 @@ Follow these steps to install the required packages:
    cd ..
    rm -rf yay
 ### Copy and paste install
-sudo pacman -S i3 i3status picom networkmanager network-manager-applet st rofi firefox signal-desktop mpv keepassxc volumeicon feh brightnessctl
+sudo pacman -S i3 i3status picom networkmanager network-manager-applet st rofi firefox signal-desktop mpv keepassxc volumeicon feh brightnessctl thunar thunar-archive-plugin
 ### Once yay is installed
 yay -S vscodium mullvad-vpn
