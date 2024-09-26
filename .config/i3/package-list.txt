@@ -1,84 +1,77 @@
 # Package List for Arch Linux Installation
 
 ## Base System
+# Essential packages for the base system and development.
 base                  # Base system package
-base-devel            # Essential development tools (compilers, make, etc.)
+base-devel            # Essential development tools (compilers, etc.)
 linux                 # Linux kernel
 linux-firmware        # Firmware for various devices
-intel-ucode          # Intel CPU microcode for improved compatibility
-nvidia                # NVIDIA drivers for graphics cards
-nvidia-settings       # GUI utility for configuring NVIDIA settings
-nvidia-utils          # Additional NVIDIA utilities for better performance
-xf86-video-amdgpu     # AMD GPU driver for AMD graphics cards
-xf86-video-ati        # Legacy AMD/ATI driver for older graphics cards
-xf86-video-nouveau    # Open-source NVIDIA driver for compatibility
-xf86-video-vmware     # VMware driver for virtual machines
-
-## X11 and i3
-xorg-server           # X11 server for graphical display
-xorg-xinit            # Xorg initialization program
-xorg-xsetroot         # Set the root window's properties
-xorg-xrandr           # X11 utility to set screen size, orientation, etc.
-i3                    # Tiling window manager
-rofi                   # Application launcher
-picom                 # Compositor for window effects (transparency, shadows)
-noto-fonts            # Basic font package for better text rendering
-st                    # Simple terminal emulator (instead of xterm)
+intel-ucode          # Intel CPU microcode
+nvidia                # NVIDIA drivers
+nvidia-settings       # NVIDIA settings utility
+nvidia-utils          # Additional NVIDIA utilities
+xf86-video-amdgpu     # AMD GPU driver
+xf86-video-ati        # Legacy AMD/ATI driver
+xf86-video-nouveau    # Open-source NVIDIA driver
+xf86-video-vmware     # VMware driver
 
 ## Utilities
-android-file-transfer  # Tool to transfer files between Android devices and the PC
+# General-purpose utilities and tools.
+android-file-transfer  # Tool to transfer files to/from Android devices
 bat                    # Improved `cat` command with syntax highlighting
-blueman                # Bluetooth manager for easy Bluetooth device management
-bluez-utils            # Bluetooth utilities for managing Bluetooth connections
-btop                   # Resource monitor showing CPU, memory, and disk usage
+blueman                # Bluetooth manager
+bluez-utils            # Bluetooth utilities
+btop                   # Resource monitor
 feh                    # Image viewer and wallpaper setter
-galculator             # Simple calculator with a graphical interface
-git                    # Version control system for tracking changes in code
-htop                   # Interactive process viewer for system monitoring
-man-db                 # Manual page database for accessing documentation
-nano                   # Simple text editor for terminal use
-ranger                 # Terminal file manager with VI keybindings
-signal-desktop         # Secure messaging app for encrypted communication
-sl                     # Fun command that displays an animation of a train
-tldr                   # Simplified man pages for quick command reference
-tmux                   # Terminal multiplexer for managing multiple terminal sessions
-ttyper                 # Type along in the terminal for practice
-wget                   # Command-line utility for downloading files from the web
-wireless_tools         # Utilities for managing wireless connections
+galculator             # Calculator
+git                    # Version control system
+htop                   # Interactive process viewer
+man-db                 # Manual page database
+nano                   # Text editor
+ranger                 # Terminal file manager
+rofi                   # Application launcher
+signal-desktop         # Secure messaging app
+sl                     # Fun command (Steam Locomotive)
+tldr                   # Simplified man pages
+tmux                   # Terminal multiplexer
+ttyper                 # Type along in the terminal
+wget                   # Download utility
+wireless_tools         # Wireless tools for Linux
 
 ## Network Management
-networkmanager         # Network management daemon for easy network configuration
-network-manager-applet # Applet for NetworkManager in the system tray
-yay                    # AUR helper for managing AUR packages easily
+# Networking tools and utilities.
+networkmanager         # Network management daemon
+network-manager-applet # Applet for NetworkManager
+yay                    # AUR helper for package management
 
 ## Development
-jdk-openjdk           # OpenJDK (Java Development Kit) for Java development
-openjdk-jre           # Java Runtime Environment for running Java applications
-maven                  # Dependency management and build tool for Java projects
+# Packages for development environments and tools.
+jdk-openjdk           # OpenJDK (Java Development Kit)
+openjdk-jre           # Java Runtime Environment
+maven                  # Dependency management and build tool for Java
 gradle                 # Build automation tool for Java projects
-python-dbus           # D-Bus support for Python applications
+python-dbus           # D-Bus support for Python
 
 ## Multimedia
-mullvad-vpn-bin       # Mullvad VPN client for secure browsing
-scrcpy                 # Screen mirroring application for Android devices
-minetest              # Game similar to Minecraft for casual gaming
+# Packages related to media playback and streaming.
+mullvad-vpn-bin       # Mullvad VPN client
+scrcpy                 # Screen mirroring application for Android
+minetest              # Game similar to Minecraft
 
 ## Graphics
-intel-media-driver    # Intel media driver for hardware acceleration of media playback
-libpulse              # PulseAudio sound server library for audio management
-libva-intel-driver    # Intel VAAPI driver for hardware video acceleration
-libva-mesa-driver     # Mesa VAAPI driver for hardware video acceleration
-vulkan-intel          # Intel Vulkan driver for graphics rendering
-vulkan-radeon         # Radeon Vulkan driver for graphics rendering
-
-## Browsers
-firefox               # Firefox web browser for internet browsing
-# mullvad-browser is not included; install directly from the website
+# Graphics and rendering related packages.
+intel-media-driver    # Intel media driver for hardware acceleration
+libpulse              # PulseAudio sound server library
+libva-intel-driver    # Intel VAAPI driver
+libva-mesa-driver     # Mesa VAAPI driver
+vulkan-intel         # Intel Vulkan driver
+vulkan-radeon        # Radeon Vulkan driver
 
 ## Performance Tools
-nvtop                 # NVIDIA GPU monitoring tool for performance analysis
-smartmontools         # S.M.A.R.T. monitoring tools for hard drives and SSDs
-zram-generator        # ZRAM configuration generator for efficient memory management
+# Tools for performance monitoring and tuning.
+nvtop                 # NVIDIA GPU monitoring tool
+smartmontools         # S.M.A.R.T. monitoring tools
+zram-generator        # ZRAM configuration generator
 
 ## Password Management
-keepassxc              # Password manager for secure storage of passwords
+keepassxc              # Password manager for secure storage
