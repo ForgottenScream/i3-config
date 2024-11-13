@@ -39,6 +39,15 @@ source ~/dotfiles/zsh/external/bd.zsh
 #Custom Script source
 source $DOTFILES/zsh/scripts.sh
 
+#Fuzzy Finder 
+#install fzf, ripgrep
+if [ $(command -v "fzf") ]; then
+    source /usr/share/fzf/completion.zsh
+    source /usr/share/fzf/key-bindings.zsh
+fi
+
+
+
 
 #Zsh Syntax Highlighting - stay at bottom of zshrc!!!
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
