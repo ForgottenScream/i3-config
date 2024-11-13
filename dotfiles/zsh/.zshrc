@@ -46,7 +46,11 @@ if [ $(command -v "fzf") ]; then
     source /usr/share/fzf/key-bindings.zsh
 fi
 
-
+#Automatically Starting i3
+if [ "$(tty)" = "/dev/tty1" ];
+then
+    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+fi
 
 
 #Zsh Syntax Highlighting - stay at bottom of zshrc!!!
