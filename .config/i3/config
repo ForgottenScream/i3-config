@@ -174,8 +174,8 @@ assign [class="Signal"] workspace $signal
 
 #Automatically switch to workspace when opening application
 #for_window [class="UXTerm"] 		workspace $terminal
-for_window [class="(?i)thorium"]	workspace $browser
-for_window [class="Mullvad Browser"]	workspace $browser
+#for_window [class="(?i)thorium"]	workspace $browser
+#for_window [class="Mullvad Browser"]	workspace $browser
 #for_window [class="Signal"]		workspace $signal
 
 #Keyboard Shortcuts
