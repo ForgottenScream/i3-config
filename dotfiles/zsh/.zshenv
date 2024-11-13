@@ -20,3 +20,6 @@ export HISTSIZE=50
 export SAVEHIST=50
 
 export DOTFILES="$HOME/dotfiles"
+
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'" #make sure ripgrep is installed
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
