@@ -40,6 +40,9 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher) - shouldn't be here
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
+#Notifications using dunst
+exec --no-startup-id dunst
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+n focus down
