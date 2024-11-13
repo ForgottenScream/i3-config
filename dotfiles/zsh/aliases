@@ -1,1 +1,20 @@
+#Arch Based Aliases
+alias update='sudo pacman -Syu && yay -Sua'
+alias clean='spr $(pacman -Qtdq) && sudo pacman -Scc && yay -Yc'
+alias sps='sudo pacman -S --needed'
+alias spss='sudo pacman -Ss'
+alias spr='sudo pacman -Rns'
 
+#General Terminal Aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sd='sudo shutdown now'
+alias q='exit'
+shred ='shred -vfzu'
+
+#Useful Aliases
+alias tool='curl -fsSl https://christitus.com/linux | sh'
+
+#i3 Based Aliases
+alias i3config='nvim ~/.config/i3/config'
+alias i3status='nvim ~/.config/i3status/config'
