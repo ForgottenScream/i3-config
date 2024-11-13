@@ -3,8 +3,8 @@
 #Set mod key
 set $mod Mod4
 
-#install ttf-droid for this font
-font pango: Droid Sans Mono 11
+#Install Inconsolata Nerd Font Complete Mono
+font pango: Inconsolata Nerd Font 12
 
 #Display Wallpaper
 exec_always feh --no-fehbg --bg-fill /usr/share/backgrounds/background.png
