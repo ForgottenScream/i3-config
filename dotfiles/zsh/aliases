@@ -18,3 +18,7 @@ alias tool='curl -fsSl https://christitus.com/linux | sh'
 #i3 Based Aliases
 alias i3config='nvim ~/.config/i3/config'
 alias i3status='nvim ~/.config/i3status/config'
+
+#ZSH Aliases
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +$(index)"; unset index
