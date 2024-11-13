@@ -36,6 +36,8 @@ bindkey-M vicmd v edit-command-line #press v to launch editor, :wq to save and q
 #bd source 
 source ~/dotfiles/zsh/external/bd.zsh
 
+#Custom Script source
+source $DOTFILES/zsh/scripts.sh
 
 
 #Zsh Syntax Highlighting - stay at bottom of zshrc!!!
