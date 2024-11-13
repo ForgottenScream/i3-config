@@ -1,3 +1,14 @@
+#!/bin/bash
+######
+#nvim#
+######
+mkdir -p "$XDF_CONFIG_HOME/nvim"
+mkdir -p "$XDF_CONFIG_HOME/nvim/undo"
+ln -sf "$DOTFILES/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+
+rm -rf "$XDF_CONFIG_HOME/X11"
+ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
+
 #Installation file - to be completed
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
