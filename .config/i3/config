@@ -9,10 +9,10 @@ font pango: Droid Sans Mono 11
 #Display Wallpaper
 exec_always feh --bg-fill /usr/share/backgrounds/background.png
 
+#Important stuff
 exec --no-statup-id dex --autostart --environment i3
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-bindsym $mod+l exec /home/$USER/.config/scripts/lock
 
 #Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
@@ -118,10 +118,11 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+p restart
 
 #Modes
-######################################################################################
+###################################################################################
 #set shut down, restart and locking features
-#type '$mod+Shift+f' then either 'e', 'r' or 's'
+#type '$mod+Shift+f' then either 'l', 'e', 'r' or 's'
 mode "$mode_system" {
+	bindsym l exec --no-startup-id ~/.config/scripts/lock
 	bindsym e exec --no-startup-id i3-msg exit
 	bindsym r exec --no-startup-id systemctl reboot
 	bindsym s exec --no-startup-id systemctl poweroff
@@ -130,7 +131,7 @@ mode "$mode_system" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-set $mode_system (e)exit, (r)eboot, (s)hutdown
+set $mode_system (l)ock, (e)exit, (r)eboot, (s)hutdown
 bindsym $mod+Shift+f mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
@@ -154,8 +155,7 @@ mode "resize" {
 }
 
 bindsym $mod+p mode "resize"
-#######################################################################################
-
+#################################################################################
 # Start i3bar to display a workspace bar
 bar {
         status_command i3status -c ~/.config/i3status/config
@@ -173,7 +173,7 @@ assign [class="Mullvad Browser"] workspace $browser
 assign [class="Signal"] workspace $signal
 
 #Automatically switch to workspace when opening application
-for_window [class="UXTerm"] 		workspace $terminal
+#for_window [class="UXTerm"] 		workspace $terminal
 for_window [class="(?i)thorium"]	workspace $browser
 for_window [class="Mullvad Browser"]	workspace $browser
 #for_window [class="Signal"]		workspace $signal
