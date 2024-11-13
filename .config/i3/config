@@ -1,5 +1,5 @@
-# i3 config file
-
+# Forgotten Scream's i3 Configuration File
+##Basic Definitions
 #Set mod key
 set $mod Mod4
 
