@@ -5,3 +5,5 @@ autoload -Uz compinit; compinit
 #Autocomplete hidden files
 _comp_options+=(globdots)
 source ~/dotfiles/zsh/external/completion.zsh
+
+fpath=($ZDOTDIR/external $fpath)
