@@ -33,5 +33,10 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey-M vicmd v edit-command-line #press v to launch editor, :wq to save and quit
 
+#bd source 
+source ~/dotfiles/zsh/external/bd.zsh
+
+
+
 #Zsh Syntax Highlighting - stay at bottom of zshrc!!!
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
