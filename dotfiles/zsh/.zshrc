@@ -21,3 +21,17 @@ bindkey -v
 export KEYTIMEOUT=1
 
 autoload -UZ cursor_mode && cursor_mode
+#colemak layout keys defined
+zmodload zzsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'n' vi-down-line-or-history
+bindkey -M menuselect 'e' vi-up-line-or-history
+bindkey -M menuselect 'i' vi-forward-char
+
+#set zsh to use neovim
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey-M vicmd v edit-command-line #press v to launch editor, :wq to save and quit
+
+#Zsh Syntax Highlighting - stay at bottom of zshrc!!!
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
