@@ -1,1 +1,206 @@
+# i3 config file
+##Basic Definitions
+#Set mod key
+set $mod Mod4
 
+#install ttf-droid for this font
+font pango: Droid Sans Mono 11
+
+#Display Wallpaper
+exec_always feh --no-fehbg --bg-fill /usr/share/backgrounds/background.png
+
+#Important stuff
+exec --no-statup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+#Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+#Audio
+set $refresh_i3status killall -SIGUSR1 i3status ##refreshes the i3status bar when changing audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+##i3 Window Manager Settings
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# drag using title bar
+tiling_drag modifier titlebar
+
+# start a terminal - shouldn't be here
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher) - shouldn't be here
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+n focus down
+bindsym $mod+e focus up
+bindsym $mod+i focus right
+
+# alternate way to change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+n move down
+bindsym $mod+Shift+e move up
+bindsym $mod+Shift+i move right
+
+# alternate way to move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+CTRL+h split h
+
+# split in vertical orientation
+bindsym $mod+CTRL+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+t fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+r layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+f layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#dbindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $terminal "1: Terminal"
+set $browser "2: Browser"
+set $signal "3: Signal"
+set $code "4: Code"
+set $tv "5: TV"
+
+# switch to workspace
+bindsym $mod+1 workspace $terminal
+bindsym $mod+2 workspace $browser
+bindsym $mod+3 workspace $signal
+bindsym $mod+4 workspace $code
+bindsym $mod+5 workspace $tv
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $terminal
+bindsym $mod+Shift+2 move container to workspace $browser
+bindsym $mod+Shift+3 move container to workspace $signal
+bindsym $mod+Shift+4 move container to workspace $code
+bindsym $mod+Shift+5 move container to workspace $tv
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+p restart
+
+#Modes
+###################################################################################
+#set shut down, restart and locking features
+#type '$mod+Shift+f' then either 'l', 'e', 'r' or 's'
+mode "$mode_system" {
+	bindsym l exec --no-startup-id ~/.config/scripts/lock, mode "default"
+	bindsym e exec --no-startup-id i3-msg exit, mode "default"
+	bindsym r exec --no-startup-id systemctl reboot, mode "default"
+	bindsym s exec --no-startup-id systemctl poweroff -i, \ mode "default"
+
+	#to exit system mode use 'Enter' or 'Escape'
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+set $mode_system (l)ock, (e)xit, (r)eboot, (s)hutdown
+bindsym $mod+BackSpace mode "$mode_system"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym n resize grow height 10 px or 10 ppt
+        bindsym e resize shrink height 10 px or 10 ppt
+        bindsym i resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+p
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+p mode "default"
+}
+
+bindsym $mod+p mode "resize"
+#################################################################################
+#Terminal scratchpad
+for_window [instance="UXTerm_scratchpad"] move to scratchpad, border none
+bindsym $mod+Shift+t [instance="UXTerm_scratchpad"] scratchpad show
+exec UXTerm -name UXTerm_scratchpad
+
+#btop scratchpad
+for_window [instance="btop_scratchpad"] move to scratchpad, border none
+bindsym $mod+Shift+g [instance="btop_scratchpad"] scratchpad show
+exec UXTerm -name btop_scratchpad -e btop
+
+
+
+# Start i3bar to display a workspace bar
+bar {
+        status_command i3status -c ~/.config/i3status/config
+	position top
+}
+
+
+
+#Autostart Applications
+exec --no-startup-id mullvad-vpn
+exec --no-startup-id keepassxc
+
+#Assign applications to workspaces
+assign [class="UXTerm"] workspace $terminal
+assign [class="Thorium"] workspace $browser
+assign [class="Mullvad Browser"] workspace $browser
+assign [class="Signal"] workspace $signal
+
+#Switch to workspace when specific application is opened / other things
+for_window [window_role="pop-up"] 	floating enable
+for_window [window_role="task_dialog"] 	floating enable
+
+for_window [class="Arandr"]		floating enable
+#for_window [class="UXTerm"] 		workspace $terminal
+#for_window [class="(?i)thorium"]	workspace $browser
+#for_window [class="Mullvad Browser"]	workspace $browser
+#for_window [class="Signal"]		workspace $signal
+
+#Keyboard Shortcuts
+bindsym $mod+Shift+S exec flameshot gui
+bindsym $mod+s exec signal-desktop
+bindsym $mod+b exec thorium-browser
+bindsym $mod+m exec /home/$USER/mullvad-browser/Browser/start-mullvad-browser
+
+workspace_auto_back_and_forth yes
