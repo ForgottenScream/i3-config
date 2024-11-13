@@ -16,3 +16,8 @@ setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 #Do not print the directory stack after using pushd or popd.
 setopt PUSHD_SILENT
+
+bindkey -v
+export KEYTIMEOUT=1
+
+autoload -UZ cursor_mode && cursor_mode
