@@ -118,7 +118,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+p restart
 
 #Modes
-###################################################################################
+######################################################################################
 #set shut down, restart and locking features
 #type '$mod+Shift+f' then either 'e', 'r' or 's'
 mode "$mode_system" {
@@ -154,6 +154,7 @@ mode "resize" {
 }
 
 bindsym $mod+p mode "resize"
+#######################################################################################
 
 # Start i3bar to display a workspace bar
 bar {
