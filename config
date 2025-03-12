@@ -131,10 +131,16 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 #################################################################################
+######## Scratchpads ##########
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 # Terminal scratchpad
 for_window [instance="i3-sensible-terminal_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+t [instance="i3-sensible-terminal_scratchpad"] scratchpad show
+bindsym $mod+Shift+t scratchpad show [instance="i3-sensible-terminal_scratchpad"]
 exec i3-sensible-terminal -name i3-sensible-terminal_scratchpad \
 -e tmux new-session -d -s scratchpad \; \
 new-window -n term 'ls -lah' \; \
@@ -142,7 +148,7 @@ attach-session -d -t scratchpad
 
 # btop scratchpad
 for_window [instance="btop_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+g [instance="btop_scratchpad"] scratchpad show
+bindsym $mod+Shift+g scratchpad show [instance="btop_scratchpad"]
 exec i3-sensible-terminal -name btop_scratchpad -e btop
 
 
@@ -151,7 +157,7 @@ bar {
     status_command i3status --config ~/.config/i3/i3status.conf
     position top
     # Disable all tray icons
-    tray_output none
+    #tray_output none
     # tray_output primary
     colors {
         background $black1
