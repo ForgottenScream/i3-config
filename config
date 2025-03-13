@@ -136,20 +136,20 @@ bindsym $mod+p mode "resize"
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+plus scratchpad show
 
-# Terminal scratchpad
-for_window [instance="i3-sensible-terminal_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+t scratchpad show [instance="i3-sensible-terminal_scratchpad"]
-exec i3-sensible-terminal -name i3-sensible-terminal_scratchpad \
--e tmux new-session -d -s scratchpad \; \
-new-window -n term 'ls -lah' \; \
-attach-session -d -t scratchpad
+# Terminal scratchpad -- not working since changed from rxvt-unicode
+#for_window [instance="terminator_scratchpad"] move to scratchpad, border none
+#bindsym $mod+Shift+t scratchpad show [instance="terminator_scratchpad"]
+#exec terminator -name terminator_scratchpad \
+#-e tmux new-session -d -s scratchpad \; \
+#new-window -n term 'ls -lah' \; \
+#attach-session -d -t scratchpad
 
-# btop scratchpad
-for_window [instance="btop_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+g scratchpad show [instance="btop_scratchpad"]
-exec i3-sensible-terminal -name btop_scratchpad -e btop
+# btop scratchpad - not working since changed from rxvt-unicode
+#for_window [instance="btop_scratchpad"] move to scratchpad, border none
+#bindsym $mod+Shift+g scratchpad show [instance="btop_scratchpad"]
+#exec terminator -name btop_scratchpad -e btop
 
 
 # Start i3bar to display a workspace bar
