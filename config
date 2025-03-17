@@ -254,7 +254,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Autostart Applications
-exec --no-startup-id keepassxc
 exec --no-startup-id dunst
 
 # Assign applications to workspaces
