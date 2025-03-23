@@ -241,6 +241,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id togglekb
 exec --no-startup-id xsetroot -cursor_name left_ptr
 exec --no-startup-id redshift -O 4500
+exec --no-startup-id flameshot
 
 # Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
