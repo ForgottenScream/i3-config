@@ -201,7 +201,7 @@ set_from_resource $white2 color15 #ffffff
 ##########
 
 # hide borders
-default_border none
+default_border none 
 
 # class border backgr. text indicator child_border
 client.focused #333333 $black2 $white2 #285577
