@@ -239,6 +239,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Autostart Applications
 exec --no-startup-id dunst
+exec --no-startup-id picom
 
 # Assign applications to workspaces
 assign [class="Mullvad Browser"] workspace $browser
