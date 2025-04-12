@@ -72,6 +72,9 @@ set $communication "3: Communication"
 set $code "4: Code"
 set $media "5: Media"
 
+# Define output for workspaces
+workspace "5: Media" output HDMI-1
+
 # switch to workspace
 bindsym $mod+1 workspace $terminal
 bindsym $mod+2 workspace $browser
