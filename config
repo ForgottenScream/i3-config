@@ -46,18 +46,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+CTRL+h split h
+bindsym $mod+Shift+h split h
 
 # split in vertical orientation
-bindsym $mod+CTRL+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+t fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+r layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+f layout toggle split
+bindsym $mod+Shift+r layout stacking
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+f layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -243,6 +243,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Autostart Applications
 exec --no-startup-id dunst
 exec --no-startup-id picom
+exec --no-startup-id env CM_MAX_CLIPS=50 clipmenud
 
 # Assign applications to workspaces
 assign [class="Mullvad Browser"] workspace $browser
@@ -254,6 +255,15 @@ for_window [window_role="task_dialog"] floating enable
 
 # Keyboard Shortcuts
 bindsym $mod+Shift+S exec flameshot gui
+bindsym $mod+v exec clipmenu
 bindsym $mod+s exec signal-desktop
+bindsym $mod+f exec firefox
 bindsym $mod+m exec $HOME/mullvad-browser/Browser/start-mullvad-browser
 bindsym $mod+d exec --no-startup-id dmenu_run
+
+
+# Rotate screen with Ctrl + Alt + Arrow keys
+bindsym $mod+CTRL+Up exec --no-startup-id xrandr --output eDP1 --rotate normal
+bindsym $mod+CTRL+Down exec --no-startup-id xrandr --output eDP1 --rotate inverted
+bindsym $mod+CTRL+Left exec --no-startup-id xrandr --output eDP1 --rotate left
+bindsym $mod+CTRL+Right exec --no-startup-id xrandr --output eDP1 --rotate right
